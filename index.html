@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Billiard</title>
+  </head>
+  <body onload="init_pool_table('pool_table')">
+    <form onclick="set_debug_mode('debug_mode')">
+      <input id="debug" type="checkbox" name="debug_mode" value="debug">
+      <label for="debug">Debug</label>
+    </form>
+
+    <br>
+
+    <form onclick="init_pool_table('pool_table')">
+      <input id="9-ball" type="radio" name="pool_table_game" value="9 Ball">
+      <label for="9-ball">9 Ball</label>
+
+      <input id="8-ball" type="radio" name="pool_table_game" value="8 Ball" checked="checked">
+      <label for="8-ball">8 Ball</label>
+    </form>
+
+    <div style="display: flex; gap: 20px;">
+      <div>
+        <p>Player 1:</p>
+        <form onclick="set_player_type('player1_type', 0)">
+          <input id="human-1" type="radio" name="player1_type" value="Human" checked="checked">
+          <label for="human-1">Human</label>
+          <br>
+          <input id="computer-1" type="radio" name="player1_type" value="Computer">Computer
+          <label for="computer-1">Computer</label>
+        </form>
+      </div>
+
+      <div>
+        <p>Player 2:</p>
+        <form onclick="set_player_type('player2_type', 1)">
+          <input id="human-2" type="radio" name="player2_type" value="Human" checked="checked">Human
+          <label for="human-2">Human</label>
+          <br>
+          <input id="computer-2" type="radio" name="player2_type" value="Computer">Computer
+          <label for="computer-2">Computer</label>
+        </form>
+      </div>
+    </div>
+
+    <div id="pool_table">
+      <canvas id="pool_table_canvas" width="887" height="443.5">
+        Sorry, your browser doesn't appear to support the HTML-5 Canvas
+      </canvas>
+    </div>
+
+    <hr>
+    <div id="msg">game: 9 Ball</div>
+    <hr>
+
+    <script type='text/javascript' src="js/canvas-pool.js"></script>
+  </body>
+</html>
